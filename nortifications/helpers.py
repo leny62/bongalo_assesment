@@ -5,7 +5,7 @@ from twilio.rest import Client
 
 def send_email(sender, receiver, msg):
     message = Mail(
-        from_email='manzi.elyse27@gmail.com',
+        from_email='lihirwe6@gmail.com',             
         to_emails=receiver,
         subject='Bongalo Notification',
         html_content=msg)
@@ -27,9 +27,9 @@ def send_sms(receiver, msg):
 
     message = client.messages \
         .create(
-            body='This is the ship that made the Kessel Run in fourteen parsecs?',
+            body=msg,
             from_=from_number,
-            to='+250725803605'
+            to=receiver
         )
 
     print(message.sid)

@@ -11,8 +11,8 @@ class Notif(models.Model):
         choices=types_of_notifications,
         default='email'
     )
-    sender = models.EmailField()
-    receiver = models.EmailField()
+    sender = models.CharField(max_length=25)
+    receiver = models.CharField(max_length=25)
     msg = models.CharField(max_length=254)
 
     def __str__(self):
